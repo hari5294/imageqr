@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- Load a separate CSS file -->
+</head>
+<body>
+    <h1>QR Code Generator</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="image">Upload Image:</label>
+        <input type="file" name="image" accept="image/*" required><br><br>
+
+        <label for="link">QR Code Link:</label>
+        <input type="text" name="link" required><br><br>
+
+        <label for="size">QR Code Size:</label>
+        <select name="size">
+            <option value="small">Small</option>
+            <option value="medium" selected>Medium</option>
+            <option value="large">Large</option>
+        </select><br><br>
+
+        <label for="color">QR Code Color:</label>
+        <select name="color">
+            <option value="black">Black</option>
+            <option value="blue">Blue</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="orange">Orange</option>
+        </select><br><br>
+
+        <label for="bg-color">QR Code Background Color:</label>
+        <input type="color" name="bg-color" value="#ffffff"><br><br>
+
+        <label for="position">QR Code Position:</label>
+        <select name="position">
+            <option value="bottom">Bottom</option>
+            <option value="center">Center</option>
+            <option value="top">Top</option>
+        </select><br><br>
+
+        <input type="submit" value="Generate QR Code">
+    </form>
+</body>
+</html>

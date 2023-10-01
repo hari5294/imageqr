@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>QR Code Result</h1>
+    <p>Here is your generated QR code:</p>
+    <img src="data:image/png;base64,{{ image_data }}" alt="Generated QR Code">
+    <br><br>
+    <a href="{{ url_for('download') }}" download>Download QR Code</a>
+</body>
+</html>
